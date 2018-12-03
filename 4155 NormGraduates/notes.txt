@@ -1,0 +1,13 @@
+click on rows to edit NOT form
+
+
+4x17 array, 0,0 would be the first one. change color
+
+
+when click on rows add the section to a form
+
+when the click on a row
+change color
+
+
+https://stackoverflow.com/questions/41216499/express-ejs-array-and-list-click-appending

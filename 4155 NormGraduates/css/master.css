@@ -1,0 +1,140 @@
+body{
+    margin-top: 80px;
+}
+
+.topnav {
+    top: 0px;
+    left: 0px;
+    padding-top: 0px;
+    padding-left: 10px;
+    background-color: #00703C;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    line-height: 50px;
+    z-index: 2;
+}
+
+.topnav-right {
+    float: right;
+}
+
+.topnav a {
+    height: 50px;
+    float: left;
+    display: block;
+    padding: 0px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    /* vertical-align: 'middle'; */
+}
+
+.topnav a:hover,
+a.active:hover {
+    height: 50px;
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    height: 50px;
+    background-color: #333;
+    color: white;
+}
+
+.footer {
+    font: 20px times, serif;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3%;
+    line-height:initial;
+    background-color: #00703C;
+    color: white;
+    text-align: center;
+}
+
+img.resize {
+    max-width: 95%;
+    max-height: 95%;
+}
+
+
+.selected{
+    background-color: yellow;
+}
+
+.tableRow:hover {
+    cursor: pointer;
+}
+
+/*****************************************************/
+/*Formatting for the column arrangement of checkboxes*/
+/*****************************************************/
+.container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-height: 200px;
+  width: 100%;
+  background-color: #e6e6e6;
+  margin: 0px;
+}
+.CBForm{
+  column-count: 4;
+  column-gap: 0;
+  flex: 1;
+
+}
+.items{
+  margin: 10px;
+  flex-grow: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+input[type=submit]{
+  background-color: #00703C;
+  width: 200px;
+  height: 75px;
+  border: none;
+  margin: 10px auto;
+  color: white;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  flex-grow: 2;
+  display: block;
+
+
+}
+input[type=submit]:hover{
+  background-color: #004d29;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*****************************************************/
+/*               End Column Formatting               */
+/*****************************************************/
+
+svg{
+  z-index: 0;
+  position: relative;
+}
+#map {
+    width: auto;
+    height: auto;
+    transform: translate(-18%, -40%);
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+#legend {
+  z-index: 1;
+  position: relative;
+}
+/* #msform{
+  z-index: -2;
+}
+*/
+/*#highlightedForm{
+  position: absolute;
+}*/

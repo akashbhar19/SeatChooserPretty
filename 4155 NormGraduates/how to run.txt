@@ -1,0 +1,12 @@
+Install Node.JS from their website: https://nodejs.org/en/download/
+
+cd into the 4155 NormGraduates folder.
+
+In the terminal run 'npm install' to install all of the dependencies that the app requires.
+
+Run the app with "node app.js"
+
+NOTE:
+if you run "npm install nodemon -g" you can then run the app with "nodemon app". Any changes to the javascript files will automatically restart the server for you. Other wise you'd have to ctrl + c and run "node app.js" again.
+
+If you're going to make a commit, DELETE the 'node_modules' folder first then commit and push.

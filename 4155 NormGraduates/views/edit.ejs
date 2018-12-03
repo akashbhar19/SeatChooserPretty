@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- <script src="scripts/prettify/prettify.js"></script>
+	<script src="scripts/prettify/lang-css.js"></script> -->
+	<!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="/css/index.css" />
+	<!-- <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css"> -->
+    <link type="text/css" rel="stylesheet" href="/css/master.css">
+	
+</head>
+<div class="topnav">
+	<a href="home" vertical-align="middle"><img class="resize" src="/img/logoTrans.png"></a>
+	<a class="active" vertical-align="middle" href="#home">Seat Predictor</a>
+
+	<div class="topnav-right">
+		<a href="login" vertical-align="middle" href="#login">Sign In</a>
+	</div>
+</div>
+
+
+
+
+
+
+
+<body style="margin-top: 90px;">
+
+    
+    <% if(typeof majorsAndColors !== "undefined"){ %>
+
+	
+
+		<table id="legend">
+				<tr>
+					<th>Color</th>
+					<th>Major</th>
+				</tr>
+		
+				<% for(var i=0; i<majorsAndColors.majors.length; i++){ 
+					
+					var styleText = "background: " + majorsAndColors.colors[i];
+					var majorName = majorsAndColors.majors[i];
+		
+				%>
+				
+				<tr>
+					<td style="<%= styleText %>">&nbsp;</td>
+					<td><%= majorName %></td>
+				</tr>
+				<% } %>
+				
+			</table>
+		
+		<% } %>
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+<div class="footer">
+	<p>UNCC Graduation © 2018</p>
+</div>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>4155</title>
+	<!-- <script src="scripts/prettify/prettify.js"></script>
+	<script src="scripts/prettify/lang-css.js"></script> -->
+	<!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="/css/index.css" />
+	<!-- <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css"> -->
+	<link type="text/css" rel="stylesheet" href="/css/master.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js'></script>
+	<script src="/javascript/raphael.js"></script>
+	<script src="/javascript/adminMap.js"></script>
+
+
+	<script src="/javascript/buttonHandlersAndMore.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+	
+
+
+</head>
+
+
+<body>
+
+	<div class="topnav">
+		<!--Changed href to "/" so that it would return to the home page -->
+		<a href="/"><img class="resize" alt="logo" src="/img/logoTrans.png"></a>
+		<a class="active" href="#home">Seat Predictor</a>
+
+		<div class="topnav-right">
+			<a href="login" id="login">Sign In</a>
+		</div>
+	</div>
+
+
+	<button id="test3">Test3</button>
+
+
+	<% if(typeof majorsAndColors !== "undefined"){ %>
+		<table id="legend">
+				<tr>
+					<th>Color</th>
+					<th>Major</th>
+				</tr>
+				<% for(var i=0; i<majorsAndColors.majors.length; i++){
+					var styleText = "background: " + majorsAndColors.colors[i];
+					var majorName = majorsAndColors.majors[i];
+				%>
+				<tr class="tableRow">
+					<td style="<%= styleText %>">&nbsp;</td>
+					<td><%= majorName %></td>
+				</tr>
+				<% } %>
+			</table>
+	<% } %>
+
+	<% if(typeof data !== "undefined"){
+        var counter = 0; %>
+        <form id="checkboxForm" action="/" style="margin-top: 90px;" method="POST">
+            <div class="container">
+                    <select class="ui fluid search dropdown" id="major-select" name="major" multiple="">
+							<option value="">Select A Major...</option>
+							<% data.forEach(function(major){ %>
+                                <option class="single-checkbox items" name="major" value="<%= major %>"><%= major %></option>
+                                <% if(counter%10 === 0 && counter !== 0){ %>
+                                    <br>
+                                <% } %>
+                                <% counter++; %>
+                            <% }) %>
+
+					</select>
+					<script>$('#major-select').dropdown();</script>
+                  </div>     
+        </form>
+
+
+	<!-- This does the same thing as the input button being inside the form because
+	of the 'form' attribute BUT this feature isn't supported in IE11. No one uses
+	IE11 though... I hope. -->
+	<input type="submit" value="Submit" id="checkboxSubmit" form="checkboxForm"/>
+
+	<% } %>
+
+
+
+
+
+	<% if(typeof majorsAndColors !== "undefined"){ %>
+		<% if(typeof highlightedSections !== "undefined"){%>
+			<input type="hidden" id="activeSections" value="<%= highlightedSections %>" />
+			<input type="hidden" id="activeColors" value="<%= highlightedColors %>" />
+		<% } %>
+	<form id="msform">
+
+		<!-- fieldsets -->
+		<!--<h2 class="fs-title">Suggested Sections</h2>
+			<h3 class="fs-subtitle">SAC Map</h3>
+			<h3 id="section-name">Hover Over Section for Section Number</h3>
+		-->
+
+			<div id="map" class="sac-map">
+				<!-- Raphaël JS Map Here -->
+			</div>
+
+	</form>
+
+
+
+
+		<!-- form for submitting the sections that got highlighted -->
+		<form action="/edit" method="POST" id="highlightedForm">
+			<input type='hidden' name='sections' id='sections' />
+			<input type='hidden' name='colors' id='colors' />
+			<input type="button" value="Submit" id="highlightedSubmit" />
+		</form>
+		<h2>SUBMIT SELECTED SECTIONS/ROWS HERE</h2>
+
+	<% } %>
+
+	<br><br>
+	<br>
+
+	<script src="/javascript/index.js"></script>
+
+	<div class="footer">
+			<p>UNCC Graduation © 2018</p>
+	</div>
+</body>
+
+
+
+</html>
